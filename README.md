@@ -134,13 +134,28 @@ This repository includes a `docker-compose.yml` with:
 - `backend` service for the FastAPI app
 - `postgres` service for the PostgreSQL database
 
-To start with Docker:
+To run the application in the background (detached mode):
 
 ```bash
-docker compose up --build
+docker compose up --build -d
 ```
 
-Then access the backend at `http://127.0.0.1:8000`.
+Then access the web interface and API at: `http://127.0.0.1:8000`
+
+### Useful Docker Commands
+
+- **Check backend logs (if something goes wrong):**
+  ```bash
+  docker logs taskflow_backend
+  ```
+- **Stop the application:**
+  ```bash
+  docker compose down
+  ```
+- **Completely reset the database (WARNING: Deletes all user data and tasks):**
+  ```bash
+  docker compose down -v
+  ```
 
 ## Future Improvements
 

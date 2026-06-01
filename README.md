@@ -112,14 +112,6 @@ This repository implements a lightweight backend service for managing tasks and 
 - `title`: task title
 - `description`: task description
 
-## Environment Variables
-
-Create a `.env` file in the repository root with at least the following value:
-
-```env
-DATABASE_URL=postgresql://<username>:<password>@localhost:5432/taskflow_db
-SECRET_KEY=your-super-secret-key-here
-```
 
 ## Local Setup
 

@@ -12,44 +12,6 @@ This repository implements a lightweight backend service for managing tasks and 
 - PostgreSQL database persistence
 - Docker-based deployment setup
 
-## Architecture and Project Flow
-
-### Core components
-
-- `app/main.py`
-  - Creates the FastAPI application
-  - Loads API routers
-  - Creates database tables on startup
-
-- `app/api/auth_routes.py`
-  - `/signup` endpoint for user registration
-  - `/login` endpoint for user authentication
-
-- `app/api/task_routes.py`
-  - `/tasks` POST endpoint to create new tasks
-  - `/tasks` GET endpoint to list tasks
-
-- `app/core/security.py`
-  - Password hashing using `bcrypt`
-  - JWT access token creation
-  - Password verification
-
-- `app/db/database.py`
-  - Database connection setup using SQLAlchemy
-  - Provides `get_db()` dependency for request-scoped sessions
-
-- `app/models/user_model.py`
-  - SQLAlchemy model for users
-
-- `app/models/task_model.py`
-  - SQLAlchemy model for tasks
-
-- `app/schemas/auth_schema.py`
-  - Pydantic request models for signup and login
-
-- `app/schemas/task_schema.py`
-  - Pydantic schemas for task creation and response
-
 ### Request flow
 
 1. Client sends a request to `app/main.py`

@@ -117,10 +117,9 @@ This repository implements a lightweight backend service for managing tasks and 
 Create a `.env` file in the repository root with at least the following value:
 
 ```env
-DATABASE_URL=postgresql://postgres:postgres@localhost:5432/taskflow_db
+DATABASE_URL=postgresql://<username>:<password>@localhost:5432/taskflow_db
+SECRET_KEY=your-super-secret-key-here
 ```
-
-> The application also defines `SECRET_KEY` and `ALGORITHM` inside `app/core/security.py`.
 
 ## Local Setup
 
@@ -151,9 +150,8 @@ docker compose up --build
 
 Then access the backend at `http://127.0.0.1:8000`.
 
-## Notes and Future Improvements
+## Future Improvements
 
-- The current task endpoints are not protected by authentication yet.
-- JWT authentication is generated in `app/core/security.py`, but route protection can be added next.
-- Add task update/delete endpoints and user-specific task ownership.
+- Add task update and delete endpoints.
+- Add user profile management.
 - Add automated database migrations using Alembic.
